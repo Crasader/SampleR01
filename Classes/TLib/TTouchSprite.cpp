@@ -23,9 +23,11 @@ TTouchSprite* TTouchSprite::createWithSpriteFrame(SpriteFrame *spriteFrame)
 	return NULL;
 }
 
-bool TTouchSprite::init()
+bool TTouchSprite::initWithSpriteFrame(SpriteFrame *spriteFrame)
 {
-	if (TSprite::init()) {
+	if (TSprite::initWithSpriteFrame(spriteFrame)) {
+#if 0
+		// sample
 		auto dispatcher = Director::getInstance()->getEventDispatcher();
 		_listener = EventListenerTouchOneByOne::create();
 		_listener->onTouchBegan = CC_CALLBACK_2(TTouchSprite::onTouchBegan, this);
@@ -33,6 +35,7 @@ bool TTouchSprite::init()
 		_listener->onTouchEnded = CC_CALLBACK_2(TTouchSprite::onTouchEnded, this);
 		_listener->onTouchCancelled = CC_CALLBACK_2(TTouchSprite::onTouchCancelled, this);
 		dispatcher->addEventListenerWithSceneGraphPriority(_listener, this);
+#endif
 		return true;
 	}
 	return false;
@@ -105,33 +108,3 @@ bool TTouchSprite::isContainedLocation(Touch *pTouch)
 
 	return false;
 }
-
-#if 0
-void TTouchSprite::registerWithTouchDispatcher(int priority)
-{
-	TouchDispatcher* pDispatcher = CCDirector::sharedDirector()->getTouchDispatcher();
-
-	m_nTouchPriority = priority;
-	pDispatcher->addTargetedDelegate(this, m_nTouchPriority, true);
-	m_regist = true;
-}
-
-void TTouchSprite::unregisterScriptTouchHandler(void)
-{
-	if (!m_regist) return;
-
-	TouchDispatcher* pDispatcher = CCDirector::sharedDirector()->getTouchDispatcher();
-	pDispatcher->removeDelegate(this);
-	EventDispatcher::getInstance()->removeEventListener(m_listener);
-	m_regist = false;
-}
-
-void TTouchSprite::setPriority(int priority)
-{
-	if (!m_regist) return;
-
-	TouchDispatcher* pDispatcher = CCDirector::sharedDirector()->getTouchDispatcher();
-	m_nTouchPriority = priority;
-	pDispatcher->setPriority(m_nTouchPriority, this);
-}
-#endif

@@ -3,10 +3,10 @@
 #include "Scene/Init/InitScene.h"
 #include "Scene/Title/TitleScene.h"
 #include "./Scene/Loading/LoadingScene.h"
+#include "./Scene/Home/HomeScene.h"
 #if 0
 #include "./Scene/UserRegist/UserRegistScene.h"
 #include "./Scene/Option/OptionScene.h"
-#include "./Scene/Home/HomeScene.h"
 #include "./Scene/Battle/BattleScene.h"
 #endif
 
@@ -23,7 +23,7 @@ TScene* SceneManager::createScene(SCENE_ID sceneId)
 		scene = TitleScene::create();
 		break;
 	case SCENE_HOME:
-//		scene = HomeScene::create();
+		scene = HomeScene::create();
 		break;
 //	case SCENE_BATTLE:
 //		scene = BattleScene::create();
@@ -105,5 +105,3 @@ TScene* SceneManager::popScene()
 
 	return NULL;
 }
-
-

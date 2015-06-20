@@ -42,8 +42,8 @@ bool CommonDialog::init(DialogType type, const std::string& text)
 	}
 
 	if (_type == Ok) {
-		TSprite* pSpriteOk = CommonTextureManager::getSprite("bt_start01.png");
-		TSprite* pSpriteOkSel = CommonTextureManager::getSprite("bt_start01.png");
+		TSprite* pSpriteOk = CommonTextureManager::getSprite("bt_ok01.png");
+		TSprite* pSpriteOkSel = CommonTextureManager::getSprite("bt_ok02.png");
 		MenuItemSprite* pBtnItem = MenuItemSprite::create(pSpriteOk, pSpriteOkSel, CC_CALLBACK_1(CommonDialog::callBackOkBtn, this));
 		Menu* pBtn = Menu::create(pBtnItem, NULL);
 		pBtn->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 200));

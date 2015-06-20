@@ -12,7 +12,7 @@ public:
 	CREATE_FUNC(TTouchSprite);
 	static TTouchSprite* createWithSpriteFrame(SpriteFrame *spriteFrame);
 
-	virtual bool init();
+	virtual bool initWithSpriteFrame(SpriteFrame *spriteFrame);
 
 	virtual void update(float delta);
 

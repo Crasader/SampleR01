@@ -56,6 +56,9 @@ void LoadingScene::set(int32_t nextSceneId)
 	if (_nextSceneId == SceneManager::SCENE_TITLE) {
 		sampleFunc();
 	}
+	if (_nextSceneId == SceneManager::SCENE_HOME) {
+		setEnd();
+	}
 
 //	_sleepCondition.notify_one();
 }
@@ -70,7 +73,9 @@ void LoadingScene::setEnd()
 	std::lock_guard<std::mutex> lg(_asyncMutex);
 	_end = true;
 
-	_thread->join();
+	if (_thread) {
+		_thread->join();
+	}
 }
 
 void LoadingScene::sampleFunc()
@@ -86,7 +91,7 @@ void LoadingScene::sampleFunc()
 			}
 			else {
 				int k = 0;
-				while (k <= 1000) {
+				while (k <= 100) {
 					++k;
 					log("%d", k);
 				}

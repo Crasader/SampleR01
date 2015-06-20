@@ -3,8 +3,6 @@
 
 #include "TLib/TLayer.h"
 
-#include "TLib/TUtility.h"
-
 class InitLayer : public TLayer
 {
 public:
