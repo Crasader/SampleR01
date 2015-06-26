@@ -5,12 +5,14 @@
 
 class InitLayer : public TLayer
 {
-public:
+private:
 	InitLayer();
 	~InitLayer();
 
-	CREATE_FUNC(InitLayer);
 	bool init();
+
+public:
+	CREATE_FUNC(InitLayer);
 
 	void onTouchEnded(Touch *pTouch, Event *pEvent);
 };

@@ -6,12 +6,14 @@
 
 class TitleLayer : public TLayer
 {
-public:
+private:
 	TitleLayer();
 	~TitleLayer();
 
-	CREATE_FUNC(TitleLayer);
 	bool init();
+
+public:
+	CREATE_FUNC(TitleLayer);
 
 private:
 	void callBackStartBtn(Ref* pSender);

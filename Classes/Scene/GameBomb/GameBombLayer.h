@@ -5,12 +5,14 @@
 
 class GameBombLayer : public TLayer
 {
-public:
+private:
 	GameBombLayer();
 	~GameBombLayer();
 
-	CREATE_FUNC(GameBombLayer);
 	bool init();
+
+public:
+	CREATE_FUNC(GameBombLayer);
 
 	void onTouchEnded(Touch *pTouch, Event *pEvent);
 };

@@ -7,12 +7,14 @@ class GameBombLayer;
 
 class GameBombScene : public TScene
 {
-public:
+private:
 	GameBombScene();
 	~GameBombScene();
 
-	CREATE_FUNC(GameBombScene);
 	bool init();
+
+public:
+	CREATE_FUNC(GameBombScene);
 
 private:
 	GameBombLayer* createLayer();

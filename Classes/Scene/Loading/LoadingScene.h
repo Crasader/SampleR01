@@ -8,12 +8,14 @@ class LoadingLayer;
 
 class LoadingScene : public TScene
 {
-public:
+private:
 	LoadingScene();
 	~LoadingScene();
 
-	CREATE_FUNC(LoadingScene);
 	bool init();
+
+public:
+	CREATE_FUNC(LoadingScene);
 	void update(float delta);
 
 	void set(int32_t nextSceneId);

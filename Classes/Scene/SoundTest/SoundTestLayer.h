@@ -5,12 +5,14 @@
 
 class SoundTestLayer : public TLayer
 {
-public:
+private:
 	SoundTestLayer();
 	~SoundTestLayer();
 
-	CREATE_FUNC(SoundTestLayer);
 	bool init();
+
+public:
+	CREATE_FUNC(SoundTestLayer);
 
 private:
 	void callBackOptionBtn(Ref* pSender);

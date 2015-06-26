@@ -7,12 +7,14 @@
 
 class HomeLayer : public TLayer
 {
-public:
+private:
 	HomeLayer();
 	~HomeLayer();
 
-	CREATE_FUNC(HomeLayer);
 	bool init();
+
+public:
+	CREATE_FUNC(HomeLayer);
 
 	bool onTouchBegan(Touch *pTouch, Event *pEvent);
 	void onTouchMoved(Touch *pTouch, Event *pEvent);

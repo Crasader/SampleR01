@@ -5,13 +5,15 @@
 
 class CommonDialog : public TModalDialog
 {
-public:
+private:
 	CommonDialog();
 	~CommonDialog();
 
+	bool init(DialogType type, const std::string& text);
+
+public:
 	static CommonDialog* create(DialogType type, const std::string& text, UPDATE_FUNC_POINTER funcUpdate, FUNC_POINTER funcEnd);
 
-	bool init(DialogType type, const std::string& text);
 	void update(float delta);
 
 	void onEnter();

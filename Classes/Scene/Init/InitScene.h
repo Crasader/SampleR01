@@ -7,12 +7,14 @@ class InitLayer;
 
 class InitScene : public TScene
 {
-public:
+private:
 	InitScene();
 	~InitScene();
 
-	CREATE_FUNC(InitScene);
 	bool init();
+
+public:
+	CREATE_FUNC(InitScene);
 
 private:
 	InitLayer* createLayer();

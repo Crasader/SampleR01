@@ -13,6 +13,8 @@ private:
     CommonTextureManager();
     ~CommonTextureManager();
     
+	bool init();
+
 public:
     static CommonTextureManager* create();
     static void destroy();
@@ -24,9 +26,6 @@ public:
 	{
 		return t_utility::createWithSpriteFrameName<T>(filename.c_str());
 	}
-
-private:
-	bool init();
 
 private:
 	static CommonTextureManager* s_manager;

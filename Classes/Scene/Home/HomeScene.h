@@ -7,12 +7,14 @@ class HomeLayer;
 
 class HomeScene : public TScene
 {
-public:
+private:
 	HomeScene();
 	~HomeScene();
 
-	CREATE_FUNC(HomeScene);
 	bool init();
+
+public:
+	CREATE_FUNC(HomeScene);
 
 private:
 	HomeLayer* createLayer();

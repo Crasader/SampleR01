@@ -7,12 +7,14 @@ class SoundTestLayer;
 
 class SoundTestScene : public TScene
 {
-public:
+private:
 	SoundTestScene();
 	~SoundTestScene();
 
-	CREATE_FUNC(SoundTestScene);
 	bool init();
+
+public:
+	CREATE_FUNC(SoundTestScene);
 
 private:
 	SoundTestLayer* createLayer();

@@ -8,12 +8,14 @@ class TSprite;
 
 class LoadingLayer : public TLayer
 {
-public:
+private:
 	LoadingLayer();
 	~LoadingLayer();
 
-	CREATE_FUNC(LoadingLayer);
 	bool init();
+
+public:
+	CREATE_FUNC(LoadingLayer);
 	void update(float delta);
 
 	void setActive(bool active) { _active = active;  _count = 0.0f; }

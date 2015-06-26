@@ -7,12 +7,14 @@ class TitleLayer;
 
 class TitleScene : public TScene
 {
-public:
+private:
 	TitleScene();
 	~TitleScene();
 
-	CREATE_FUNC(TitleScene);
 	bool init();
+
+public:
+	CREATE_FUNC(TitleScene);
 	void update(float delta);
 
 private:
