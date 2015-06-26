@@ -19,12 +19,15 @@ public:
 		YesNo,
 	};
 
+protected:
 	TModalDialog();
 	virtual ~TModalDialog();
 
+	virtual bool init(DialogType type, const std::string& text);
+
+public:
 	static TModalDialog* create(DialogType type, const std::string& text, UPDATE_FUNC_POINTER funcUpdate, FUNC_POINTER funcEnd);
 
-	virtual bool init(DialogType type, const std::string& text);
 	virtual void update(float delta);
 
 	virtual void onEnter();

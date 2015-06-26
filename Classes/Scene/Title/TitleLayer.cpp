@@ -124,10 +124,5 @@ void TitleLayer::callBackStartBtn(Ref* pSender)
 
 void TitleLayer::callBackOptionBtn(Ref* pSender)
 {
-	// sample
-	static int bgmID = 0;
-	BGM_MANAGER()->play(bgmID, true);
-	bgmID = (bgmID == 0) ? 1 : 0;
+	SceneManager::changeScene(SceneManager::SCENE_SOUND_TEST, true);
 }
-
-

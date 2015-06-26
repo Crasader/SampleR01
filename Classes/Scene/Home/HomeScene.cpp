@@ -3,8 +3,12 @@
 #include "HomeLayer.h"
 
 HomeScene::HomeScene()
-	:_layer(NULL)
-{}
+: _layer(NULL)
+{
+#ifdef DISP_SCENE_NAME
+	_sceneName = "HomeScene";
+#endif // DISP_SCENE_NAME
+}
 HomeScene::~HomeScene()
 {}
 

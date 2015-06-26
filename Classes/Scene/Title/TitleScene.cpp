@@ -3,7 +3,12 @@
 #include "TitleLayer.h"
 
 TitleScene::TitleScene()
-{}
+: _layer(NULL)
+{
+#ifdef DISP_SCENE_NAME
+	_sceneName = "TitleScene";
+#endif // DISP_SCENE_NAME
+}
 TitleScene::~TitleScene()
 {}
 

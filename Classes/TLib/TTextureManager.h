@@ -13,11 +13,12 @@ typedef std::map<int32_t, cocos2d::Texture2D*> texturemap;
 
 class TTextureManager
 {
-public:
+protected:
     TTextureManager();
     virtual ~TTextureManager();
 
-    void addTexture(const texturemap& textures);
+public:
+	void addTexture(const texturemap& textures);
     void addTexture(int32_t index, cocos2d::Texture2D* pTexture);
     
 protected:

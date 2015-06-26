@@ -4,7 +4,12 @@
 
 LoadingScene::LoadingScene()
 : _thread(NULL)
-{}
+, _layer(NULL)
+{
+#ifdef DISP_SCENE_NAME
+	_sceneName = "LoadingScene";
+#endif // DISP_SCENE_NAME
+}
 LoadingScene::~LoadingScene()
 {
 	CC_SAFE_DELETE(_thread);
@@ -59,6 +64,12 @@ void LoadingScene::set(int32_t nextSceneId)
 	if (_nextSceneId == SceneManager::SCENE_HOME) {
 		setEnd();
 	}
+	if (_nextSceneId == SceneManager::SCENE_SOUND_TEST) {
+		setEnd();
+	}
+	if (_nextSceneId == SceneManager::SCENE_GAME_BOMB) {
+		setEnd();
+	}
 
 //	_sleepCondition.notify_one();
 }
@@ -86,14 +97,14 @@ void LoadingScene::sampleFunc()
 		while (true)
 		{
 			std::lock_guard<std::mutex> lg(_asyncMutex);
-			if (_count >= 1.5f) {
+			if (_count >= 1.0f) {
 				break;
 			}
 			else {
 				int k = 0;
-				while (k <= 100) {
+				while (k <= 50) {
 					++k;
-					log("%d", k);
+					//log("%d", k);
 				}
 
 //				std::unique_lock<std::mutex> lk(_sleepMutex);

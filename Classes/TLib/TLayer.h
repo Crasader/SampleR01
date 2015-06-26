@@ -6,13 +6,14 @@ USING_NS_CC;
 
 class TLayer : public cocos2d::Layer
 {
-public:
+protected:
 	TLayer();
 	virtual ~TLayer();
+	virtual bool init();
 
+public:
 	CREATE_FUNC(TLayer);
 
-	virtual bool init();
 	virtual void update(float delta);
 
 	virtual void onEnter();

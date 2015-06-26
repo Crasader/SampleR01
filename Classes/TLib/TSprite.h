@@ -6,14 +6,16 @@ USING_NS_CC;
 
 class TSprite : public cocos2d::Sprite
 {
-public:
+protected:
 	TSprite();
 	virtual ~TSprite();
 
+	virtual bool init();
+
+public:
 	CREATE_FUNC(TSprite);
 	static TSprite* createWithSpriteFrame(SpriteFrame *spriteFrame);
 
-	virtual bool init();
 	virtual void update(float delta);
 
 	virtual void onEnter();

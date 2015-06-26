@@ -20,11 +20,6 @@ bool HomeLayer::init()
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto label = Label::createWithSystemFont("Home Scene", "Arial", 24);
-	label->setPosition(Vec2(origin.x + visibleSize.width / 2,
-		origin.y + visibleSize.height - label->getContentSize().height));
-	this->addChild(label, 1);
-
 	_tiledMap = TMXTiledMap::create("isometric_grass_and_water.tmx");
 	// スクリーンの中心とマップの中心を合わせる
 	Rect mapRect = _tiledMap->getBoundingBox();

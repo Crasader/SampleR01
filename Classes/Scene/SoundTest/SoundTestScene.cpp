@@ -1,18 +1,18 @@
 ﻿#include "Scene/SceneManager.h"
-#include "InitScene.h"
-#include "InitLayer.h"
+#include "SoundTestScene.h"
+#include "SoundTestLayer.h"
 
-InitScene::InitScene()
+SoundTestScene::SoundTestScene()
 : _layer(NULL)
 {
 #ifdef DISP_SCENE_NAME
-	_sceneName = "InitScene";
+	_sceneName = "SoundTestScene";
 #endif // DISP_SCENE_NAME
 }
-InitScene::~InitScene()
+SoundTestScene::~SoundTestScene()
 {}
 
-bool InitScene::init()
+bool SoundTestScene::init()
 {
 	if (!TScene::init())
 	{
@@ -30,8 +30,8 @@ bool InitScene::init()
 	return true;
 }
 
-InitLayer* InitScene::createLayer()
+SoundTestLayer* SoundTestScene::createLayer()
 {
-	_layer = InitLayer::create();
+	_layer = SoundTestLayer::create();
 	return _layer;
 }

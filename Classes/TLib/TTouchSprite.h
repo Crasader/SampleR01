@@ -5,14 +5,15 @@
 
 class TTouchSprite : public TSprite
 {
-public:
+protected:
 	TTouchSprite();
 	virtual ~TTouchSprite();
 
+	virtual bool initWithSpriteFrame(SpriteFrame *spriteFrame);
+
+public:
 	CREATE_FUNC(TTouchSprite);
 	static TTouchSprite* createWithSpriteFrame(SpriteFrame *spriteFrame);
-
-	virtual bool initWithSpriteFrame(SpriteFrame *spriteFrame);
 
 	virtual void update(float delta);
 

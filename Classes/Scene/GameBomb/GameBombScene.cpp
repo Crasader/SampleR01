@@ -1,18 +1,18 @@
-﻿#include "Scene/SceneManager.h"
-#include "InitScene.h"
-#include "InitLayer.h"
+#include "Scene/SceneManager.h"
+#include "GameBombScene.h"
+#include "GameBombLayer.h"
 
-InitScene::InitScene()
+GameBombScene::GameBombScene()
 : _layer(NULL)
 {
 #ifdef DISP_SCENE_NAME
-	_sceneName = "InitScene";
+	_sceneName = "GameBombScene";
 #endif // DISP_SCENE_NAME
 }
-InitScene::~InitScene()
+GameBombScene::~GameBombScene()
 {}
 
-bool InitScene::init()
+bool GameBombScene::init()
 {
 	if (!TScene::init())
 	{
@@ -30,8 +30,8 @@ bool InitScene::init()
 	return true;
 }
 
-InitLayer* InitScene::createLayer()
+GameBombLayer* GameBombScene::createLayer()
 {
-	_layer = InitLayer::create();
+	_layer = GameBombLayer::create();
 	return _layer;
 }

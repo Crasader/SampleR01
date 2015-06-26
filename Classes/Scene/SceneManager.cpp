@@ -2,8 +2,10 @@
 #include "TLib/TScene.h"
 #include "Scene/Init/InitScene.h"
 #include "Scene/Title/TitleScene.h"
-#include "./Scene/Loading/LoadingScene.h"
-#include "./Scene/Home/HomeScene.h"
+#include "Scene/Loading/LoadingScene.h"
+#include "Scene/Home/HomeScene.h"
+#include "Scene/SoundTest/SoundTestScene.h"
+#include "Scene/GameBomb/GameBombScene.h"
 #if 0
 #include "./Scene/UserRegist/UserRegistScene.h"
 #include "./Scene/Option/OptionScene.h"
@@ -36,6 +38,12 @@ TScene* SceneManager::createScene(SCENE_ID sceneId)
 //		break;
 	case SCENE_OPTION:
 //		scene = OptionScene::create();
+		break;
+	case SCENE_GAME_BOMB:
+		scene = GameBombScene::create();
+		break;
+	case SCENE_SOUND_TEST:
+		scene = SoundTestScene::create();
 		break;
 	default:
 		break;

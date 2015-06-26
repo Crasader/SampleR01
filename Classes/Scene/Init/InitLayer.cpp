@@ -19,14 +19,6 @@ bool InitLayer::init()
 		return false;
 	}
 
-	Size visibleSize = Director::getInstance()->getVisibleSize();
-	Vec2 origin = Director::getInstance()->getVisibleOrigin();
-
-	auto label = Label::createWithSystemFont("Init Scene", "Arial", 24);
-	label->setPosition(Vec2(origin.x + visibleSize.width / 2,
-							origin.y + visibleSize.height - label->getContentSize().height));
-	this->addChild(label, 1);
-
 	auto listener = EventListenerTouchOneByOne::create();
 	listener->onTouchBegan = [](Touch *touch, Event*event)->bool{ return true; };
 	listener->onTouchEnded = CC_CALLBACK_2(InitLayer::onTouchEnded, this);
