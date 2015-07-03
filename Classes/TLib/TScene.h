@@ -28,11 +28,13 @@ public:
 	virtual void onExitTransitionDidStart();
 
 	void setSceneID(int32_t sceneId) { _sceneId = sceneId; }
+	int32_t getSceneID() { return _sceneId; }
 
-protected:
+private:
 	int32_t _sceneId;
 
 #ifdef DISP_SCENE_NAME
+protected:
 	std::string _sceneName = "";
 #endif // DISP_SCENE_NAME
 };

@@ -32,12 +32,6 @@ public:
 
 protected:
 	EventListenerTouchOneByOne* _listener; 
-
-private:
-#if 0
-	bool m_regist;
-	int m_nTouchPriority;
-#endif
 };
 
 #endif // __T_TOUCH_SPRITE_H__
