@@ -54,15 +54,20 @@ namespace t_utility {
 
 	/////////////////////////////////////////////
 	// JsonŠÖ˜A
-	extern bool readJson(const char* jsonFileName, char* buffer, rapidjson::Document& reader)
+	extern bool readJson(const char* jsonFileName, char*& buffer, rapidjson::Document& reader)
 	{
 		Data data = FileUtils::getInstance()->getDataFromFile(jsonFileName);
 		ssize_t size = data.getSize();
 
+		if (size <= 0) {
+			assert(0);
+			return false;
+		}
+
 		// json need null-terminated string.
 		buffer = new char[size + 1];
 		memcpy(buffer, data.getBytes(), size);
-		buffer[size] = '\0';
+		(buffer)[size] = '\0';
 		if (reader.ParseInsitu<0>(buffer).HasParseError())
 		{
 			assert(0);

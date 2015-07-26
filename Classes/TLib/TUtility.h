@@ -44,7 +44,7 @@ namespace t_utility
 
 	/////////////////////////////////////////////
 	// JsonŠÖ˜A
-	extern bool readJson(const char* jsonFileName, char* buffer, rapidjson::Document& reader);
+	extern bool readJson(const char* jsonFileName, char*& buffer, rapidjson::Document& reader);
 }
 
 #endif // __T_UTILITY_H__

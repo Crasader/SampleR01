@@ -15,6 +15,9 @@ public:
 	CREATE_FUNC(InitLayer);
 
 	void onTouchEnded(Touch *pTouch, Event *pEvent);
+
+private:
+	void readJsonTest();
 };
 
 #endif // __INIT_LAYER_H__
